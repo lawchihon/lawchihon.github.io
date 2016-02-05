@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8" name="viewport" content="width=device-width" />
+
+     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+     <!-- Latest compiled and minified Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+     <!-- Latest compiled and minified Bootstrap JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+     <!-- Latest compiled nad minified AngularJs -->
+     <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+     <script src="https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+     <script src="js/home.js"></script>
+
+     <title>BookMarker</title>
+
+</head>
+<body ng-app="home" ng-controller="homeCtrl" name="home" novalidate>
+     <!-- Navigation Bar Begin -->
+     <nav class="navbar navbar-default">
+          <div class="container-fluid">
+               <!-- Navigation Bar's Header -->
+               <div class="navbar-header">
+                    <!-- Logo Button -->
+                    <a class="navbar-logo" href="index.html">BookMarker </a>
+               </div>
+
+               <div class="navbar-header">
+                    <!-- Welcome Statement -->
+                    <a class="navbar-welcome" href="home.html">Welcome, {{name}}</a>
+               </div>
+
+               <button type="submit" class="btn btn-default" ng-click="logOut()">Logout</button>
+          </div>
+     </nav>
+     <!-- Navigation Bar End -->
+
+     <!-- Content Begin-->
+     <!-- Display list name and description -->
+     <!--
+     <center>
+          <div class="fileTitle">
+               <p>{{Name}}</p>
+          </div>
+     </center>
+     -->
+     <br/>
+
+     <!-- In progress category -->
+     <center>
+          <ul ng-repeat="Bookmark in Bookmarks">
+               <li class="list-group-item" id="{{$index}}"> 
+                    <a href="{{Bookmark.url}}">{{Bookmark.title}} </a>
+               </li>
+          </ul>
+     </center>
+
+     <!-- Create New Bookmark -->
+     <center>
+          <div class = "newGoal">
+               <button type="button" id="newBookMarkButton" class="btn btn-success btn-lg">
+                    Create Bookmark
+               </button>
+               <div style="display:none" id="bookMarkCreator">
+                    <p>Bookmark Title: </p>
+                     <input type="text" class="form-control" id="newTitle">
+                     <p>Bookmark URL: </p>
+                     <input type="text" class="form-control" id="newURL">
+                     <br>
+                     <button type="button" id="createButton" class="btn btn-success btn-lg" ng-click="addBookMark()">Create!</button>
+                     <button type="button" id="cancelButton" class="btn btn-danger btn-lg">Cancel</button>
+               </div>
+          </div>
+     </center>
+     <!-- Content End -->
+</body>
+</html>

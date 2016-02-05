@@ -1,0 +1,23 @@
+.navbar-default {
+	font-size: 15px;
+	background-color: rgba(102, 0, 204, 1);
+	border-width: 1px;
+	border-radius: 4px;
+	height: 80px;
+    font-family: Georgia, Serif;
+}
+
+.navbar-default .navbar-logo {
+	color: rgba(255, 255, 255, 1);
+	font-size: 50px;
+	font-weight: bold;
+    position: absolute;
+    left: 75px;
+    bottom: 1px;
+}
+
+.navbar-collapse {
+    position: absolute;
+    right: 0px;
+    top: 20%;
+}
